@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.IntroController">
+   <children>
+      <Button layoutX="637.0" layoutY="526.0" mnemonicParsing="false" onAction="#nextButtonAction" prefHeight="50.0" prefWidth="100.0" text="Tovább" textFill="#897818" />
+      <Label fx:id="welcome" alignment="CENTER" layoutX="11.0" layoutY="21.0" prefHeight="100.0" prefWidth="800.0" textFill="#dac107" underline="true">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="task1" alignment="TOP_LEFT" ellipsisString="&#10;" layoutX="37.0" layoutY="205.0" prefHeight="200.0" prefWidth="400.0" textAlignment="JUSTIFY" textFill="#dac107">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="task2" alignment="TOP_LEFT" ellipsisString="&#10;" layoutX="406.0" layoutY="205.0" prefHeight="200.0" prefWidth="400.0" textAlignment="JUSTIFY" textFill="#dac107" textOverrun="CLIP">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="warning" ellipsisString="" layoutX="37.0" layoutY="406.0" prefHeight="100.0" prefWidth="600.0" textAlignment="JUSTIFY" textFill="#dac107">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="click" ellipsisString="" layoutX="369.0" layoutY="526.0" prefHeight="50.0" prefWidth="300.0" textAlignment="JUSTIFY" textFill="#dac107" />
+   </children>
+</AnchorPane>

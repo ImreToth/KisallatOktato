@@ -1,0 +1,15 @@
+{
+    "users": [{
+            "rating": "64%",
+            "point": 8,
+            "username": "TestName3"
+        }, {
+            "rating": "83%",
+            "point": 10,
+            "username": "TestName2"
+        }, {
+            "rating": "40%",
+            "point": 5,
+            "username": "TestName1"
+        }]
+}

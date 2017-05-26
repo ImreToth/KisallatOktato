@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ResultController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="ownresult" alignment="TOP_CENTER" layoutX="-25.0" layoutY="31.0" prefHeight="179.0" prefWidth="800.0" textAlignment="JUSTIFY" textFill="#dac107">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="allusername" alignment="TOP_CENTER" layoutX="26.0" layoutY="133.0" prefHeight="400.0" prefWidth="250.0" textFill="#dac107">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="allpoint" alignment="TOP_CENTER" layoutX="289.0" layoutY="133.0" prefHeight="400.0" prefWidth="250.0" textFill="#dac107">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="allrating" alignment="TOP_CENTER" layoutX="558.0" layoutY="133.0" prefHeight="400.0" prefWidth="250.0" textFill="#dac107">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="69.0" prefHeight="30.0" prefWidth="361.0" text="Más felhsználók eredményei:" textFill="#dac107" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="91.0" layoutY="110.0" text="Felhasználónév" textFill="#dac107">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="396.0" layoutY="110.0" text="Pont" textFill="#dac107">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="643.0" layoutY="110.0" text="Eredmény" textFill="#dac107">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="701.0" layoutY="64.0" mnemonicParsing="false" onAction="#quit" prefHeight="40.0" prefWidth="100.0" text="Kilépés" textFill="#897818" />
+      <Button layoutX="701.0" layoutY="14.0" mnemonicParsing="false" onAction="#replay" prefHeight="40.0" prefWidth="100.0" text="Újra" textFill="#897818" />
+   </children>
+</AnchorPane>

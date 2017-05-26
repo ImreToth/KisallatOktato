@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="400.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+   <children>
+      <Label alignment="CENTER" layoutX="75.0" layoutY="99.0" prefHeight="30.0" prefWidth="250.0" text="Add meg a neved!" textFill="#dac107" />
+      <TextField fx:id="username" alignment="CENTER" layoutX="122.0" layoutY="135.0" prefHeight="30.0" prefWidth="156.0" promptText="név" />
+      <Button layoutX="150.0" layoutY="178.0" mnemonicParsing="false" onAction="#DoneButton" prefHeight="25.0" prefWidth="100.0" text="Kész" textFill="#897818" />
+   </children>
+</AnchorPane>
