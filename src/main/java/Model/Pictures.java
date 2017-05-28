@@ -18,8 +18,6 @@
 
 package Model;
 
-import javafx.scene.image.Image;
-
 /**
  * Pictures Modell Objektum.
  *
@@ -73,8 +71,8 @@ public class Pictures {
 
         this.cat_info = "A macska egy kisebb termetű húsevő emlősállat,\n"
                 + " amely a macskafélék családjába tartozik";
-        this.ladybird_info = "A katicabogárfélék a rovarok osztályának a bogarak rendjébe,\n"
-                + " ezen belül a mindenevő bogarak alrendjébe tartozó család.";
+        this.ladybird_info = "A katicabogárfélék a rovarok osztályának\n a bogarak rendjébe,\n"
+                + " ezen belül a mindenevő bogarak\n alrendjébe tartozó család.";
         this.swallow_info = "A fecskefélék a madarak osztályának\n"
                 + " a verébalakúak rendjébe tartozó család.";
     }
