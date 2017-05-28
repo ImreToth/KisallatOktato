@@ -29,8 +29,8 @@
     
     <scm>
         <url>https://github.com/ImreToth/KisallatOktato</url>
-        <connection>scm:git:git://github.com/ImreToth/KisallatOktato.git</connection>
-        <developerConnection>scm:git:git@github.com:ImreToth/KisallatOktato.git</developerConnection>
+        <connection>scm:git://github.com/ImreToth/KisallatOktato.git</connection>
+        <developerConnection>scm:git://github.com/ImreToth/KisallatOktato.git</developerConnection>
     </scm>
   
     <developers>
