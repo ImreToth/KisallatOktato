@@ -18,6 +18,7 @@
 
 package Model;
 
+import Controllers.ResultController;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,6 +28,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * Json fájl olvasásáért felelő osztály.
  * 
@@ -34,6 +37,8 @@ import org.json.simple.parser.ParseException;
  * @version 1.0
  */
 public class ReadJson {
+    
+    private Logger logger = LoggerFactory.getLogger(ResultController.class);
     
     private final Object obj;
     private final File jsonfile;
@@ -70,7 +75,8 @@ public class ReadJson {
             for (int i = user.size()-1; i < user.size(); i++) {
                 JSONObject jsonObjectRow = (JSONObject) user.get(i);
                 String username = (String) jsonObjectRow.get("username");
-                
+                logger.debug(username);
+                logger.info("Succesful read.");
                 return username;              
             }
          return null;   
@@ -84,7 +90,8 @@ public class ReadJson {
             for (int i = user.size()-1; i < user.size(); i++) {
                 JSONObject jsonObjectRow = (JSONObject) user.get(i);
                 long point = (long) jsonObjectRow.get("point");
-                
+                logger.debug(String.valueOf(point));
+                logger.info("Succesful read.");
                 return (int) point;              
             }
          return 0;   
@@ -98,7 +105,8 @@ public class ReadJson {
             for (int i = user.size()-1; i < user.size(); i++) {
                 JSONObject jsonObjectRow = (JSONObject) user.get(i);
                 String rating = (String) jsonObjectRow.get("rating");
-                
+                logger.debug(rating);
+                logger.info("Succesful read.");
                 return rating;              
             }
          return null;   
@@ -115,6 +123,8 @@ public class ReadJson {
                 sb.append((String) jsonObjectRow.get("username"));
                 sb.append("\n");
             }
+            logger.debug(sb.toString());
+            logger.info("Succesful read.");
             return sb.toString();
     }
     /**
@@ -129,6 +139,8 @@ public class ReadJson {
                 sb.append(String.valueOf((long) jsonObjectRow.get("point")));
                 sb.append("\n");
             }
+            logger.debug(sb.toString());
+            logger.info("Succesful read.");
             return sb.toString();
     }
     /**
@@ -144,6 +156,8 @@ public class ReadJson {
                 sb.append("\n");
         
             }
+            logger.debug(sb.toString());
+            logger.info("Succesful read.");
             return sb.toString();
         }
     /**

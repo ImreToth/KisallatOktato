@@ -18,14 +18,13 @@
 
 package Model;
 
-import java.io.File;
-import java.io.FileReader;
+import Controllers.ResultController;
 import java.io.FileWriter;
 import java.io.IOException;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * Json fájl írásáért felelő osztály.
  * <p>Lásd {@link #WriteJson(java.lang.String, java.lang.Integer, java.lang.String) }
@@ -34,6 +33,9 @@ import org.json.simple.parser.ParseException;
  * @version 1.0
  */
 public class WriteJson {
+    
+    private Logger logger = LoggerFactory.getLogger(ResultController.class);
+    
     /**
      * Json fájl írása.
      * 
@@ -62,6 +64,8 @@ public class WriteJson {
             FileWriter Fw = new FileWriter(r.getJsonfile());
             Fw.write(r.getJsonObject().toJSONString());
             Fw.flush();
+            
+            logger.info("Successful write.");
     }
     
 }
