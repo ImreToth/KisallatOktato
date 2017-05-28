@@ -82,5 +82,6 @@ dist/
 nbdist/
 .nb-gradle/
 nb-configuration.xml
+nbactions.xml
 
 # End of https://www.gitignore.io/api/maven,eclipse,netbeans
