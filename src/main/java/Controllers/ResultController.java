@@ -15,7 +15,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package Controllers;
 
 import Model.ReadJson;
@@ -36,7 +35,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ResultController implements Initializable {
-
+    private Logger logger = LoggerFactory.getLogger(ResultController.class);
+    private final String filePath = System.getProperty("user.home") + "/.Kisallatoktato/Users.json";
+    
     @FXML
     private Label ownresult, allusername, allpoint, allrating;
 
@@ -46,7 +47,7 @@ public class ResultController implements Initializable {
     }
 
     @FXML
-    private void replay(ActionEvent event){
+    private void replay(ActionEvent event) {
         try {
             ((Node) (event.getSource())).getScene().getWindow().hide();
 
@@ -55,30 +56,27 @@ public class ResultController implements Initializable {
             scene.getStylesheets().add("/styles/Styles.css");
             Stage stage = new Stage();
             stage.setScene(scene);
-            stage.setTitle("M?sodik Feladat");
+            stage.setTitle("Második Feladat");
             stage.show();
-            
+
             logger.info("Push the button.");
         } catch (IOException e) {
             logger.error("error is ", e);
         }
     }
-
-    private final String filePath = System.getProperty("user.home") + "/.Kisallatoktato/Users.json";
-    private static Logger logger;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        logger = LoggerFactory.getLogger(ResultController.class);
+
         try {
             ReadJson r = new ReadJson(filePath);
             allrating.setText(r.getAllRating());
             allpoint.setText(r.getAllPoint());
             allusername.setText(r.getAllUsername());
-            ownresult.setText(r.getCurrentUsername() + " Eredménye:            Pont: "
-                    + String.valueOf(r.getCurrentPoint()) + "        értékelés: "
+            ownresult.setText(r.getCurrentUsername() + " Eredménye: Pont: "
+                    + String.valueOf(r.getCurrentPoint()) + "\t Értékelés: "
                     + r.getCurrentRating());
-            
+
             logger.info("Initialize the window details.");
         } catch (IOException | ParseException ex) {
             logger.error("error is ", ex);
