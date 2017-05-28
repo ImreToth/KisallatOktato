@@ -48,7 +48,7 @@ public class Task2Controller implements Initializable {
 
     public static Result result = new Result();
     Pictures pic = new Pictures();
-    private Logger logger;
+    private Logger logger = LoggerFactory.getLogger(Task2Controller.class);
 
     @FXML
     private ImageView swallow_pic, ladybird_pic, cat_pic;
@@ -69,52 +69,66 @@ public class Task2Controller implements Initializable {
         } else if (target.getImage() == ladybird_pic.getImage()){
             Info.setText(pic.getLadybird_info());
         }
+        logger.info("Mouse was entered.");
     }
 
     @FXML
     void setOnMouseExited(MouseEvent event) {
         Info.setText(" ");
+        logger.info("Mouse was exited.");
     }
 
     @FXML
     void CheckButton(ActionEvent event){
         if (t1.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t2.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t3.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t4.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t5.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t6.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t7.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t8.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t9.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t10.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t11.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
         if (t12.isSelected()) {
             result.AddPoint(1);
+            logger.info("Button was selected.");
         }
-        logger = LoggerFactory.getLogger(Task2Controller.class);
+        
         try{
         ((Node) (event.getSource())).getScene().getWindow().hide();
 
@@ -124,6 +138,7 @@ public class Task2Controller implements Initializable {
         stage.setScene(scene);
         stage.setTitle("Oktat? Program");
         stage.show();
+        logger.info("Push the button.");
         }catch(IOException e){
             logger.error("error is ", e);
         }
@@ -135,6 +150,7 @@ public class Task2Controller implements Initializable {
         ladybird_pic.setImage(new Image(getClass().getResource(pic.getLadybird()).toExternalForm(),200, 200, true, true));
         cat_pic.setImage(new Image(getClass().getResource(pic.getCat()).toExternalForm(),200, 200, true, true));
         Info.setStyle("-fx-border-color: black;");
+        logger.info("Initialize the window details.");
     }
 
 }

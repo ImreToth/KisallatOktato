@@ -57,6 +57,8 @@ public class ResultController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("M?sodik Feladat");
             stage.show();
+            
+            logger.info("Push the button.");
         } catch (IOException e) {
             logger.error("error is ", e);
         }
@@ -76,6 +78,8 @@ public class ResultController implements Initializable {
             ownresult.setText(r.getCurrentUsername() + " Eredménye:            Pont: "
                     + String.valueOf(r.getCurrentPoint()) + "        értékelés: "
                     + r.getCurrentRating());
+            
+            logger.info("Initialize the window details.");
         } catch (IOException | ParseException ex) {
             logger.error("error is ", ex);
         }

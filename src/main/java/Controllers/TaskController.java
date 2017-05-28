@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
 public class TaskController implements Initializable {
 
     Pictures pic = new Pictures();
-    private Logger logger;
+    private Logger logger = LoggerFactory.getLogger(ResultController.class);
 
     @FXML
     private Button check;
@@ -74,31 +74,29 @@ public class TaskController implements Initializable {
                 && compareImage(Task3.getImage(), swallow_pic.getImage())) {
             check.setVisible(false);
             Text.setText("Helyes válasz!");
+            logger.info("Push the button.");
         } else {
             Text.setText("Helytelen válasz!");
+            logger.info("Push the button.");
         }
     }
 
-
-
     @FXML
-        private 
+    private void nextButtonAction(ActionEvent event) {
+        try {
+            ((Node) (event.getSource())).getScene().getWindow().hide();
 
-void nextButtonAction(ActionEvent event){
-        logger = LoggerFactory.getLogger(ResultController.class
-);
-        try{
-        ((Node) (event.getSource())).getScene().getWindow().hide();
-
-        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/Task2.fxml"));
-        Scene scene = new Scene(parent);
-        scene.getStylesheets().add("/styles/Styles.css");
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Második Feladat");
-        stage.show();
-        }catch (IOException e){
-           logger.error("error is ", e);
+            Parent parent = FXMLLoader.load(getClass().getResource("/fxml/Task2.fxml"));
+            Scene scene = new Scene(parent);
+            scene.getStylesheets().add("/styles/Styles.css");
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Második Feladat");
+            stage.show();
+            
+            logger.info("Push the button.");
+        } catch (IOException e) {
+            logger.error("error is ", e);
         }
     }
 
@@ -110,6 +108,7 @@ void nextButtonAction(ActionEvent event){
         content.putImage(source.getImage());
         db.setContent(content);
         event.consume();
+        logger.info("set on drag detected.");
     }
 
     @FXML
@@ -119,6 +118,7 @@ void nextButtonAction(ActionEvent event){
             event.acceptTransferModes(TransferMode.COPY);
         }
         event.consume();
+        logger.info("set on drag over.");
     }
 
     @FXML
@@ -130,6 +130,7 @@ void nextButtonAction(ActionEvent event){
             target.setImage(source.getImage());
         }
         event.consume();
+        logger.info("set on drag entered.");
 
     }
 
@@ -139,6 +140,7 @@ void nextButtonAction(ActionEvent event){
         ImageView target = (ImageView) event.getTarget();
         target.setImage(source.getImage());
         event.consume();
+        logger.info("set on drag exited.");
     }
 
     @FXML
@@ -152,10 +154,11 @@ void nextButtonAction(ActionEvent event){
         }
         event.setDropCompleted(success);
         event.consume();
+        logger.info("set on drag dropped.");
     }
 
     @Override
-        public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) {
         swallow_pic.setImage(new Image(getClass().getResource(pic.getSwallow()).toExternalForm(), 200, 200, true, true));
         ladybird_pic.setImage(new Image(getClass().getResource(pic.getLadybird()).toExternalForm(), 200, 200, true, true));
         cat_pic.setImage(new Image(getClass().getResource(pic.getCat()).toExternalForm(), 200, 200, true, true));
@@ -163,7 +166,7 @@ void nextButtonAction(ActionEvent event){
         Task1.setImage(new Image(getClass().getResource(pic.getEmpty()).toExternalForm(), 200, 200, true, true));
         Task2.setImage(new Image(getClass().getResource(pic.getEmpty()).toExternalForm(), 200, 200, true, true));
         Task3.setImage(new Image(getClass().getResource(pic.getEmpty()).toExternalForm(), 200, 200, true, true));
-
+        logger.info("Initialize the window details.");
     }
 
 }

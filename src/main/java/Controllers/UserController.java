@@ -33,13 +33,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class UserController {
-    private Logger logger;
+    private Logger logger = LoggerFactory.getLogger(ResultController.class);
     @FXML
     private TextField username;
 
     @FXML
     void DoneButton(ActionEvent event){
-        logger = LoggerFactory.getLogger(ResultController.class);
+        
         try {
             WriteJson wr = new WriteJson(username.getText(),
                     Task2Controller.result.getPoints(),
@@ -54,6 +54,7 @@ public class UserController {
             stage.setScene(scene);
             stage.setTitle("Felhasználó");
             stage.show();
+            logger.info("Push the button.");
         }catch(IOException | ParseException e){
             logger.error("error is ", e);
         }

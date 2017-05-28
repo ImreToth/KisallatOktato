@@ -48,7 +48,9 @@ public class IntroController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Első Feladat");
-        stage.show(); 
+        stage.show();
+        
+        logger.info("Push the button.");
         }catch(IOException e){
             logger.error("error is ", e);
         }
